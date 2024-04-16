@@ -14,14 +14,13 @@ import Info from './components/pages/Info.jsx';
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Navbar />}>
           <Route path="/home" element={<Home />}/>
           <Route path="/about" element={<About />}/>
           <Route path="/donate" element={<Dontate />}/>
           <Route path="/info" element={<Info />}/>
           <Route path="/contact" element={<Contact />}/>
-        </Route>
       </Routes>
   </BrowserRouter>
   );
