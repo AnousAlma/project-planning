@@ -3,6 +3,8 @@ nav {
     border-bottom: 1px solid #e9ecef;
     padding: 0.5rem 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+    position: sticky;
 }
 
 .title {
@@ -17,6 +19,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
 }
 
 .nav-list {
