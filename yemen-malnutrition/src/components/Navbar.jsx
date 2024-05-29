@@ -70,7 +70,9 @@ export default function WithSubnavigation() {
         borderBottom={1}
         borderStyle={'solid'}
         borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
+        align={'center'}
+        shadow={'md'}
+        >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -110,6 +112,7 @@ const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
   const popoverContentBgColor = useColorModeValue('white', 'gray.800');
+  let navigate = useNavigate();
 
   return (
     <Stack direction={'row'} spacing={4}>
@@ -119,7 +122,7 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Link
                 p={2}
-                href={navItem.href ?? '#'}
+                onClick={navItem.href && (() => navigate(navItem.href))}
                 fontSize={'sm'}
                 fontWeight={500}
                 color={linkColor}
@@ -201,6 +204,7 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }) => {
+  let navigate = useNavigate();
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -208,7 +212,7 @@ const MobileNavItem = ({ label, children, href }) => {
       <Flex
         py={2}
         as={Link}
-        href={href ?? '#'}
+        onClick={href && (() => navigate(href))}
         justify={'space-between'}
         align={'center'}
         _hover={{
